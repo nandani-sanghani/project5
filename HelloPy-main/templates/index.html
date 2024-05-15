@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Azure - Python Quickstart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <main>
+        <div class="px-4 py-3 my-2 text-center">
+            <h1 class="display-6 fw-bold text-primary">Good Evening</h1>
+            <h1>CI CD With Flask Python</h1>           
+        </div>
+        
+        <!-- Display users -->
+        <div class="container">
+            <h2>All Users</h2>
+            <ul>
+                {% for user in users %}
+                <li>{{ user.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <form method="post" action="{{url_for('hello')}}">
+            <div class="col-md-6 mx-auto text-center">
+                <label for="name" class="form-label fw-bold fs-5">Could you please tell me your name?</label>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center align-items-center my-1">
+                    <input type="text" class="form-control" id="name" name="name" style="max-width: 256px;">
+                </div>            
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center my-2">
+                    <button type="submit" class="btn btn-warning btn-lg px-4 gap-3">Say Hii</button>
+                </div>            
+            </div>
+        </form>
+    </main>  
+
+    <footer>
+        <h3>Made By Vedant Trivedi</h3>
+    </footer>
+</body>
+</html>
